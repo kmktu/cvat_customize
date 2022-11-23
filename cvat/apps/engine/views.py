@@ -2324,6 +2324,7 @@ def _export_annotations(db_instance, rq_id, request, format_name, action, callba
                     #     ).lower()
                     if isinstance(db_instance, Task):
                         filename = db_instance.name + ".json"
+                    # Project Folder export
                     elif isinstance(db_instance, Project):
                         filename = filename or "{}{}".format(db_instance.name, osp.splitext(file_path)[1])
 

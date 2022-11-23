@@ -299,6 +299,7 @@ def dump_json_file_project(temp_dir, project_data):
                                                                     action_max_frame, track_id, shape.label])
                     action_flag = False
 
+            # write action export json
             if len(action_annotation_label) > 0:
                 for i in range(len(action_annotation_label)):
                     for i2 in range(len(action_annotation_label[i][4])):

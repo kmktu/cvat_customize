@@ -126,4 +126,6 @@ import cvat.apps.dataset_manager.formats.cvat
 # import cvat.apps.dataset_manager.formats.lfw
 # import cvat.apps.dataset_manager.formats.cityscapes
 # import cvat.apps.dataset_manager.formats.openimages
+
+# import customize format
 import cvat.apps.dataset_manager.formats.drone_format
