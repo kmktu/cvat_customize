@@ -306,10 +306,10 @@ def dump_json_file_project(temp_dir, project_data):
                         frame_data["frame_bbox"].append({
                             "bbox_frame": int(action_annotation_label[i][4][i2][0]),
                             "bbox": [
-                                float(action_annotation_label[i][4][i2][0]),
                                 float(action_annotation_label[i][4][i2][1]),
                                 float(action_annotation_label[i][4][i2][2]),
-                                float(action_annotation_label[i][4][i2][3])
+                                float(action_annotation_label[i][4][i2][3]),
+                                float(action_annotation_label[i][4][i2][4])
                             ]
                         })
                     file_data["action_annotation"].append({

@@ -2314,20 +2314,22 @@ def _export_annotations(db_instance, rq_id, request, format_name, action, callba
                 if action == "download" and osp.exists(file_path):
                     rq_job.delete()
 
-                    # timestamp = datetime.strftime(last_instance_update_time,
-                    #     "%Y_%m_%d_%H_%M_%S")
-                    # filename = filename or \
-                    #     "{}_{}-{}-{}{}".format(
-                    #         db_instance.__class__.__name__.lower(),
-                    #         db_instance.name if isinstance(db_instance, (Task, Project)) else db_instance.id,
-                    #         timestamp, format_name, osp.splitext(file_path)[1]
-                    #     ).lower()
-                    if isinstance(db_instance, Task):
-                        filename = db_instance.name + ".json"
-                    # Project Folder export
-                    elif isinstance(db_instance, Project):
-                        filename = filename or "{}{}".format(db_instance.name, osp.splitext(file_path)[1])
 
+                    if format_name == "drone_export_track_shape 1.0":
+                        if isinstance(db_instance, Task):
+                            filename = db_instance.name + ".json"
+                        # Project Folder export
+                        elif isinstance(db_instance, Project):
+                            filename = filename or "{}{}".format(db_instance.name, osp.splitext(file_path)[1])
+                    else:
+                        timestamp = datetime.strftime(last_instance_update_time,
+                                                      "%Y_%m_%d_%H_%M_%S")
+                        filename = filename or \
+                                   "{}_{}-{}-{}{}".format(
+                                       db_instance.__class__.__name__.lower(),
+                                       db_instance.name if isinstance(db_instance, (Task, Project)) else db_instance.id,
+                                       timestamp, format_name, osp.splitext(file_path)[1]
+                                   ).lower()
 
                     # save annotation to specified location
                     location = location_conf.get('location')

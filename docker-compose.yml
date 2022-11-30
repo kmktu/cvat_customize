@@ -206,6 +206,11 @@ services:
 volumes:
   cvat_db:
   cvat_data:
+      driver: local
+      driver_opts:
+          o: bind
+          type: none
+          device: /mnt/drone_mount
   cvat_keys:
   cvat_logs:
 

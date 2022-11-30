@@ -105,7 +105,7 @@ TF.enable_tf_check = True
 
 # pylint: disable=unused-import
 # import cvat.apps.dataset_manager.formats.coco
-import cvat.apps.dataset_manager.formats.cvat
+# import cvat.apps.dataset_manager.formats.cvat
 # import cvat.apps.dataset_manager.formats.datumaro
 # import cvat.apps.dataset_manager.formats.labelme
 # import cvat.apps.dataset_manager.formats.mask
@@ -113,7 +113,7 @@ import cvat.apps.dataset_manager.formats.cvat
 # import cvat.apps.dataset_manager.formats.mots
 # import cvat.apps.dataset_manager.formats.pascal_voc
 # import cvat.apps.dataset_manager.formats.tfrecord
-# import cvat.apps.dataset_manager.formats.yolo
+import cvat.apps.dataset_manager.formats.yolo
 # import cvat.apps.dataset_manager.formats.imagenet
 # import cvat.apps.dataset_manager.formats.camvid
 # import cvat.apps.dataset_manager.formats.widerface
